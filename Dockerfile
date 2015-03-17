@@ -9,9 +9,10 @@ MAINTAINER Johnathon Trumble
 ADD source/ /tmp/
 
 # Extract the zip
-RUN unzip /tmp/oracle-xe-11.2.0-1.0.x86_64.rpm.zip -d /tmp
+RUN unzip /tmp/oracle-xe-11.2.0-1.0.x86_64.rpm.zip Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm -d /tmp
 
 # Run necessary prerequisite checks for XE, since we have to skip them during RPM install
+# (Attempts to modify kernel parameters, which the container does not have access to)
 RUN /tmp/pre.sh
 
 # Install the Oracle XE RPM
@@ -34,5 +35,6 @@ ADD xe.run /xe.run
 EXPOSE 1521
 EXPOSE 8080
 
-# Change the hostname in the listener.ora file, start Oracle XE and the ssh daemon
+# Execute the run daemon which changes the hostname in the listener.ora file, then
+# starts Oracle XE and monitors the process
 CMD /xe.run
