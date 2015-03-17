@@ -11,10 +11,12 @@ This software, along with the aforementioned scripts are provided without warran
 
 INSTRUCTIONS:
 
-1) Edit Dockerfile and uncomment the line to run pre.sh
-   Docker's build images don't have sufficient RAM to pass the check, so it was commented out for build purposes.
-   For actual use, you'll want the prerequisite checks to run
-2) Run the docker build -
+1) Edit Dockerfile and uncomment the line to run pre.sh. Docker's build images don't have sufficient RAM to pass the check, so it was commented out for build purposes. For actual use, you'll want the prerequisite checks to run
+
+2) Run the docker build:
+
    docker build -t <name> .
-3) Run the container after a successful build -
+
+3) Run the container after a successful build:
+   
    docker run -p 1521:1521 -p 8080:8080 -d <name>
