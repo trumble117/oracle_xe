@@ -15,8 +15,8 @@ INSTRUCTIONS:
 
 2) Run the docker build:
 
-   docker build -t <name> .
+   docker build -t oracle_xe .
 
 3) Run the container after a successful build:
    
-   docker run -p 1521:1521 -p 8080:8080 -d <name>
+   docker run -p 1521:1521 -p 8080:8080 -d oracle_xe
