@@ -1,0 +1,18 @@
+#!/bin/sh
+# Johnathon Trumble
+# March 16, 2015
+
+# Replace hostname that given by Docker daemon
+# (or user-specified on RUN)
+sed -i -E "s/HOST = [^)]+/HOST = $HOSTNAME/g" /u01/app/oracle/product/11.2.0/xe/network/admin/listener.ora
+
+# Start the Oracle XE Database service
+service oracle-xe start
+
+# Ensure it's always running
+# If it dies, the Docker container will stop
+while [[ -f /var/lock/subsys/oracle-xe ]]; do
+        sleep 10
+done
+
+exit 2 
