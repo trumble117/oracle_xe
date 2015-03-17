@@ -1,8 +1,10 @@
-# oracle_xe
-Docker automated build for Oracle XE container
+# Oracle Express Edition 11gR2 for Docker
+Description: Docker automated build for Oracle XE container
 
-You must download oracle-xe-11.2.0-1.0.x86_64.rpm.zip from Oracle and place it in the 'source' directory:
+NOTICE: This build image contains proprietary (closed-source) software!
 
-http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip
+By using the scripts contained in this repository, you agree to the terms set forth in the Oracle OTN license agreement. The agreement, in it's entirety, can be found here: http://www.oracle.com/technetwork/licenses/database-11g-express-license-459621.html
+This image is provided for development use only, and shall not be used in a production system of any kind.
+I, the developer, do not represent Oracle by providing these scripts or software.
 
-I have not yet inserted a way to grab it directly from Oracle due to the OTN Agreement, and it's too big to upload to GitHub.
+This software, along with the aforementioned scripts are provided without warranty or support, either express or implied from either myself, or Oracle.

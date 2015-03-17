@@ -8,6 +8,9 @@ MAINTAINER Johnathon Trumble
 # inside the image
 ADD source/ /tmp/
 
+# Download the XE source zip and place it in /tmp
+RUN curl -L -o /tmp/oracle-xe-11.2.0-1.0.x86_64.rpm.zip https://www.dropbox.com/s/w2awdt23gx9v4ka/oracle-xe-11.2.0-1.0.x86_64.rpm.zip?dl=0 
+
 # Extract the zip
 RUN unzip /tmp/oracle-xe-11.2.0-1.0.x86_64.rpm.zip Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm -d /tmp
 
