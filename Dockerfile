@@ -1,5 +1,5 @@
 # Use the OEL6 base image
-FROM jwalkertrumble/oel6:6.6 
+FROM jwalkertrumble/oel6:6.7 
 
 # Maintainer of the image
 MAINTAINER Johnathon Trumble
