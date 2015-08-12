@@ -16,7 +16,8 @@ RUN unzip /tmp/oracle-xe-11.2.0-1.0.x86_64.rpm.zip Disk1/oracle-xe-11.2.0-1.0.x8
 
 # Run necessary prerequisite checks for XE, since we have to skip them during RPM install
 # (Attempts to modify kernel parameters, which the container does not have access to)
-RUN /tmp/pre.sh
+# [IMPORTANT] Prerequisite checks are skipped for Docker auto-build, but if you're building this yourself, I suggest uncommenting the next line!
+#RUN /tmp/pre.sh
 
 # Install the Oracle XE RPM
 RUN rpm -ivh --nopre /tmp/Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm
